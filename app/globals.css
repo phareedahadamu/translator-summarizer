@@ -1,11 +1,49 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --primary: rgba(0, 131, 196);
+  --secondary: rgba(236, 249, 255);
+  --grey1: rgba(83, 92, 100);
+  --grey2: rgba(173, 181, 189);
+  --accent: rgba(221, 0, 151);
+  --accent2: rgba(0, 73, 107);
+}
+.dark {
+  --background: #051923;
+  --primary: rgba(0, 166, 251);
+  --secondary: rgba(9, 46, 65);
+  --grey1: rgba(233, 236, 239);
+  --grey2: rgba(222, 226, 230);
+  --accent: rgba(250, 0, 167);
+  --accent2: rgba(236, 249, 255);
 }
 
 @theme inline {
+  --color-mainBg: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-grey-50: var(--grey1);
+  --color-grey-100: var(--grey2);
+  --accent-color: var(--accent);
+  --font-sans: var(--font-monty);
+  --color-accent2: var(--accent2);
+}
+
+.gradientText {
+  background: -webkit-linear-gradient(var(--accent), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -23,4 +61,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
